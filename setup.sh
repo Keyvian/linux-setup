@@ -72,8 +72,12 @@ apt-get install -y tor torbrowser-launcher
 # 8. Setting up update cronjob
 mkdir /usr/share/scripts
 mv update_system.py /usr/share/scripts/update_system.py 
+touch /var/log/update_kali.log
+chown root:root /var/log/update_kali.log
+chmod 600 /var/log/update_kali.log
 
-(crontab -l && echo "0 2 * * 0 /usr/bin/python3 /usr/share/script/update_system.py") | crontab -
+CRON_ENTRY="0 2 * * 0 /usr/bin/env python3 /usr/share/scripts/update_system.py"
+(crontab -l && echo "0 2 * * 0 /usr/bin/env python3 /usr/share/scripts/update_system.py") | crontab -
 
 
 echo
