@@ -70,7 +70,7 @@ apt-get install -y tor torbrowser-launcher
 
 
 # 8. Setting up update cronjob
-kdir /usr/share/scripts
+mkdir /usr/share/scripts
 mv update_system.py /usr/share/scripts/update_system.py 
 
 (crontab -l && echo "0 2 * * 0 /usr/bin/python3 /usr/share/script/update_system.py") | crontab -
