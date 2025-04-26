@@ -62,6 +62,10 @@ apt-get install -y kali-linux-default
 echo
 echo "=== 6. Installing Terminal Tools ==="
 apt-get install -y guake terminator bmon bpytop
+# Définir Terminator comme exécutable par défaut
+gsettings set org.gnome.desktop.default-applications.terminal exec 'terminator'
+# Préciser l’argument pour lancer une commande (–x ou -x selon la version)
+gsettings set org.gnome.desktop.default-applications.terminal exec-arg '-x'
 
 # 7. Set Up Tor for Anonymous Browsing 
 echo
