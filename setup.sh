@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+# kali-setup.sh — Automate post-install configuration on Kali Linux
+# Run as root: chmod +x kali-setup.sh && sudo ./kali-setup.sh
+
 set -euo pipefail
 
 LOG="/var/log/kali-setup.log"
