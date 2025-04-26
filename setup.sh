@@ -15,16 +15,13 @@ echo "=== 1. Updating System ==="
 cp /etc/apt/sources.list /etc/apt/sources.list.backup
 echo "deb http://http.kali.org/kali kali-rolling main non-free contrib" | sudo tee /etc/apt/sources.list
 apt-get update -y
-apt install ufw openvpn gdebi wireshark tlp git code -y
-ufw enable -y
+apt install ufw openvpn gdebi wireshark tlp git -y
 apt-get full-upgrade -y
 apt-get dist-upgrade -y
 apt-get autoremove -y
 apt-get autoclean -y
 
-apt install ufw
 ufw enable
-apt install openvpn
 
 # 2. Configure SSH (if needed) 
 echo
