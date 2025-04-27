@@ -15,11 +15,18 @@ echo "=== 1. Updating System ==="
 cp /etc/apt/sources.list /etc/apt/sources.list.backup
 echo "deb http://http.kali.org/kali kali-rolling main non-free contrib" | sudo tee /etc/apt/sources.list
 apt-get update -y
-apt install ufw openvpn gdebi wireshark tlp git -y
+apt install ufw openvpn gdebi wireshark tlp git gdb -y
+
+wget -O ~/.gdbinit-gef.py -q https://gef.blah.cat/py
+echo source ~/.gdbinit-gef.py >> ~/.gdbinit
+
 apt-get full-upgrade -y
 apt-get dist-upgrade -y
 apt-get autoremove -y
 apt-get autoclean -y
+
+wget -O ~/.gdbinit-gef.py -q https://gef.blah.cat/py
+echo source ~/.gdbinit-gef.py >> ~/.gdbinit
 
 ufw enable
 
